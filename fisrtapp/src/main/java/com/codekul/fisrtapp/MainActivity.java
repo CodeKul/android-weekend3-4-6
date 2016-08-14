@@ -2,17 +2,34 @@ package com.codekul.fisrtapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-public class MainActivity extends Activity {
+import java.util.Date;
+
+public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        final EditText edtName  = (EditText) findViewById(R.id.edtName);
+
+        Button btnOkay = (Button) findViewById(R.id.btnOkay);
+        btnOkay.setOnClickListener(this);
+        btnOkay.setOnClickListener(new Click());
+        btnOkay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                edtName.setText(""+new Date());
+            }
+        });
+
     }
 
     private void createUiByCode(){
@@ -36,5 +53,18 @@ public class MainActivity extends Activity {
         layoutRoot.addView(btnOkay);
 
         setContentView(layoutRoot);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    private class Click implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+
+        }
     }
 }
