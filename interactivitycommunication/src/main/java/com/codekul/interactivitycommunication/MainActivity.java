@@ -1,6 +1,7 @@
 package com.codekul.interactivitycommunication;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String KEY_MY_DATE = "date";
     private static final int REQ_CALENDAR = 1234;
+    public static final String KEY_MY_CAR = "car";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Bundle bundle = new Bundle();
                 bundle.putLong(KEY_MY_DATE,System.currentTimeMillis());
+                bundle.putSerializable(KEY_MY_CAR,new Car());
 
                 intent.putExtras(bundle);
              //   startActivity(intent);
