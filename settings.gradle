@@ -1,1 +1,1 @@
-include ':app', ':fisrtapp'
+include ':app', ':fisrtapp', ':layouts', ':compoundview', ':customview', ':animations', ':interactivitycommunication', ':activitylifecycle', ':handlingruntimechanges'
